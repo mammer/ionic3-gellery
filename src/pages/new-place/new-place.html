@@ -1,0 +1,30 @@
+
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>New Place</ion-title>
+    <button ion-button="" menuToggle="">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <form #f="ngForm" (ngSubmit)="onAddPlace(f.value)" >
+    <ion-item>
+      <ion-input type="text" name="title" ngModel required placeholder="Title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" name="county" ngModel required placeholder="County"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" name="city" ngModel required placeholder="City"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input type="text" name="keywords" ngModel required placeholder="keyWords"></ion-input>
+    </ion-item>
+    <button ion-button block type="submit" [disabled]="! f.valid" color="secondary" >Save Place</button>
+  </form>
+</ion-content>
